@@ -6,7 +6,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write # npm provenance attestation
+  id-token: write # npm trusted publishing (OIDC) + provenance
 
 jobs:
   publish:
@@ -20,11 +20,13 @@ jobs:
           cache: npm
           registry-url: https://registry.npmjs.org
 
+      # Trusted publishing requires npm CLI >= 11.5.1 for OIDC auth.
+      - run: npm install -g npm@latest
+
       - run: npm ci
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
 
+      # No token: authenticates via OIDC trusted publishing configured on npmjs.com.
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
