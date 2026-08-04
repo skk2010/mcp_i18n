@@ -6,7 +6,7 @@ export interface ServerConfig {
   defaultFile?: string;
 }
 
-const USAGE = `Usage: i18n-mcp [--locales-dir <path>] [--default-file <name>]
+const USAGE = `Usage: mcp-i18n [--locales-dir <path>] [--default-file <name>]
 
 Options:
   --locales-dir <path>   Directory with locale files (default: $I18N_LOCALES_DIR or <cwd>/config/locales)

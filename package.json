@@ -1,16 +1,31 @@
 {
-  "name": "i18n-mcp",
+  "name": "mcp-i18n",
   "version": "0.1.0",
   "description": "MCP server that gives coding agents tools to manage Rails-style YAML/JSON localization files",
   "type": "module",
   "main": "dist/src/index.js",
   "bin": {
-    "i18n-mcp": "dist/src/index.js"
+    "mcp-i18n": "dist/src/index.js"
   },
   "files": [
     "dist",
+    "!dist/test",
     "README.md"
   ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "i18n",
+    "localization",
+    "rails",
+    "yaml",
+    "translations"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skk2010/mcp_i18n.git"
+  },
+  "homepage": "https://github.com/skk2010/mcp_i18n#readme",
   "engines": {
     "node": ">=18"
   },
@@ -22,7 +37,8 @@
     "coverage": "vitest run --coverage",
     "smoke": "npm run build && node dist/test/smoke.js",
     "start": "node dist/src/index.js",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prepublishOnly": "npm run lint && npm run typecheck && npm test && npm run smoke"
   },
   "license": "MIT",
   "dependencies": {

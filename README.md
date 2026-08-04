@@ -26,6 +26,14 @@ the server.
 
 ## Install and build
 
+Run directly from npm without installing:
+
+```sh
+npx -y mcp-i18n --locales-dir /path/to/rails-app/config/locales
+```
+
+Or build from source:
+
 ```sh
 npm install
 npm run build
@@ -34,7 +42,23 @@ npm run build
 ## Usage with an MCP client
 
 Add the server to your MCP client configuration (Kimi Code, Claude Desktop,
-etc.), passing the Rails app's locales directory:
+etc.). Via npx (no local checkout needed):
+
+```json
+{
+  "mcpServers": {
+    "i18n": {
+      "command": "npx",
+      "args": [
+        "-y", "mcp-i18n",
+        "--locales-dir", "/path/to/rails-app/config/locales"
+      ]
+    }
+  }
+}
+```
+
+Or from a local build:
 
 ```json
 {

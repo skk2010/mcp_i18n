@@ -63,6 +63,6 @@ describe('resolveConfig', () => {
 
   it('rejects unknown arguments and --help with usage text', async () => {
     await expect(resolveConfig(['--bogus'], {}, workDir)).rejects.toThrow('Unknown argument: --bogus');
-    await expect(resolveConfig(['--help'], {}, workDir)).rejects.toThrow('Usage: i18n-mcp');
+    await expect(resolveConfig(['--help'], {}, workDir)).rejects.toThrow('Usage: mcp-i18n');
   });
 });

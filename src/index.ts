@@ -12,7 +12,7 @@ async function main(): Promise<void> {
   const store = await LocaleStore.load(config.localesDir, config.defaultFile);
 
   const server = new McpServer({
-    name: 'i18n-mcp',
+    name: 'mcp-i18n',
     version: '0.1.0',
   });
 
@@ -21,7 +21,7 @@ async function main(): Promise<void> {
   registerCheckTools(server, store);
 
   await server.connect(new StdioServerTransport());
-  console.error(`i18n-mcp serving ${store.locales().length} locale(s) from ${config.localesDir}`);
+  console.error(`mcp-i18n serving ${store.locales().length} locale(s) from ${config.localesDir}`);
 }
 
 main().catch((error: unknown) => {
