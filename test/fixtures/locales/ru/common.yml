@@ -1,0 +1,5 @@
+ru:
+  greeting: Hello (ru) %{name}
+  actions:
+    save: Save (ru)
+    cancel: Cancel (ru)

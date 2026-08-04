@@ -1,0 +1,6 @@
+en:
+  # Greeting shown on the dashboard
+  greeting: Hello %{name}
+  actions:
+    save: Save
+    cancel: Cancel

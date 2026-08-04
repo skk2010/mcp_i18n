@@ -1,0 +1,4 @@
+th:
+  greeting: ''
+  actions:
+    save: Save (th)

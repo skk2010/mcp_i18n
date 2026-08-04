@@ -1,0 +1,44 @@
+{
+  "name": "i18n-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that gives coding agents tools to manage Rails-style YAML/JSON localization files",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "bin": {
+    "i18n-mcp": "dist/src/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "smoke": "npm run build && node dist/test/smoke.js",
+    "start": "node dist/src/index.js",
+    "prepare": "husky"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "yaml": "^2.9.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.1.2",
+    "@vitest/coverage-v8": "^4.1.10",
+    "eslint": "^10.8.0",
+    "husky": "^9.1.7",
+    "tsx": "^4.23.5",
+    "typescript": "~5.9",
+    "typescript-eslint": "^8.66.0",
+    "vitest": "^4.1.10"
+  }
+}
