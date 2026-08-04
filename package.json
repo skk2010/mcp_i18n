@@ -1,6 +1,6 @@
 {
   "name": "mcp-i18n",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MCP server that gives coding agents tools to manage Rails-style YAML/JSON localization files",
   "type": "module",
   "main": "dist/src/index.js",
